@@ -1,0 +1,722 @@
+/* ESTILO GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+body {
+    background-color: rgb(136, 50, 37);
+    height: 100vh;
+    margin: 0;
+}
+
+.img {
+    width: 108px;
+    
+  }
+
+.interface {
+    max-width: 1280px;
+    margin: 0 auto;
+    
+}
+
+.flex {
+    display: flex;
+}
+
+
+h2.titulo {
+    color: #fff;
+    font-size: 38px;
+    text-align: center;
+}
+
+h2.titulo span {
+    color: black;
+}
+
+button:hover,
+form .btn-enviar input:hover {
+    box-shadow: 0px 0px 8px #C71E1C;
+    transform: scale(1.05);
+}
+
+
+
+
+html {
+    scroll-behavior:smooth ;
+    scroll-padding-top: 90px;
+}
+
+::-webkit-scrollbar{
+    width: 3px;
+    height: 2px;
+
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #C71E1C;
+}
+
+
+/* ESTILO DO HEADER */
+/* ESTILO DO HEADER */
+
+/* Modificações no header para dispositivos móveis */
+header {
+    padding:80px 4%;
+    margin-bottom: 30px;
+
+    /* Adicionada regra de mídia para dispositivos móveis */
+    @media screen and (max-width: 768px) {
+        padding: 5px 4%; /* Reduzi ainda mais o espaçamento para dispositivos móveis */
+        margin-bottom: 30px;
+    }
+}
+
+/* Modificações na interface do header para dispositivos móveis */
+header > .interface {
+    /* Alterações para dispositivos móveis */
+    flex-direction: column; /* Empilhar os elementos em dispositivos móveis */
+    text-align: center; /* Centralizar o texto */
+    margin-bottom: 30px;
+
+    /* Adicionada regra de mídia para dispositivos móveis */
+    @media screen and (max-width: 768px) {
+        margin-bottom: 0; /* Reduzi a margem inferior para dispositivos móveis */
+    }
+}
+
+/* Estilo original para links no header */
+header a {
+    color: white;
+    align-items: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
+    margin-bottom: 30px;
+}
+
+/* Estilo original para o menu desktop no header */
+header nav.menu-desktop {
+    position: fixed;
+    align-items: center;
+    background-color: rgb(136, 50, 37);
+    width: 93%;
+    height: 50px;
+    font-size: 23px;
+    z-index: 1000;
+    margin-bottom: 30px;
+
+    /* Adicionada regra de mídia para dispositivos móveis */
+    @media screen and (max-width: 768px) {
+        width: 100%; /* Utilizar toda a largura disponível em dispositivos móveis */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adicionar uma sombra sutil para dispositivos móveis */
+    }
+}
+
+/* Estilo original para links no menu desktop no header */
+header nav.menu-desktop a:hover {
+    color: black;
+    transform: scale(1.05);
+    margin-bottom: 30px;
+}
+
+/* Estilo original para a lista não ordenada no menu desktop no header */
+header nav ul {
+    list-style-type: none;
+}
+
+/* Modificações nos itens do menu desktop para dispositivos móveis */
+header nav.menu-desktop ul li {
+    display: inline-block;
+    padding: 0 20px; /* Ajustar o espaçamento entre os itens do menu */
+
+    /* Adicionada regra de mídia para dispositivos móveis */
+    @media screen and (max-width: 768px) {
+        padding: 10px 0; /* Ajustar o espaçamento entre os itens do menu para dispositivos móveis */
+        display: block; /* Empilhar os itens do menu em dispositivos móveis */
+    }
+}
+
+
+
+/* ESTILO DO MENU MOBILE */
+
+.btn-abrir-menu{
+    display: none;
+    color: whitesmoke;
+}
+
+.btn-abrir-menu i{
+    color: black;
+    font-size: 40px;
+}
+
+.menu-mobile{
+    background-color: rgb(136, 50, 37, 0.9);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -70%;
+    z-index: 99999;
+    width: 40%;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.menu-mobile.abrir-menu{
+    right: 0;
+    width: 40%;
+}
+
+.menu-mobile.abrir-menu ~ .overlay-menu{
+    display: block;
+}
+
+
+.menu-mobile .btn-fechar{
+    padding: 20px 5%;
+}
+
+.menu-mobile .btn-fechar i{
+    color: whitesmoke;
+    font-size: 30px;
+}
+
+.menu-mobile nav ul{
+    text-align: right;
+}
+
+.menu-mobile nav ul li a{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 20px 8%;
+    display: flex;
+}   
+
+.menu-mobile nav ul li a:hover{
+    background-color: #C71E1C;
+    color: #000;
+}
+
+.overlay-menu{
+    background-color:whitesmoke;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 88888;
+    /* display: none; */
+}
+
+/* ESTILO DO TOPO DO SITE */
+section.topo-do-site {
+    padding: 40px 4%;
+}
+
+section.topo-do-site .flex {
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+}
+
+.topo-do-site h1 {
+    color: black;
+    font-size: 36px;
+    line-height: 40px;
+}
+
+.topo-do-site .txt-topo-site h1 span {
+    color: white;
+}
+
+.topo-do-site .txt-topo-site p {
+    color: #fff;
+    margin: 40px 0;
+    font-size: 22px;
+}
+
+/* Estilo para a imagem do topo do site */
+.img-topo-site img {
+    align-items: center;
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura da div pai */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 50%;
+}
+
+/* Keyframes para a animação da imagem */
+@keyframes flutuar {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 30px;
+    }
+}
+
+/* Restante do seu CSS... */
+
+
+/* ESTILO DAS ESPECIALIDADES */
+section.especialidades {
+    padding: 40px 4%;
+    align-items: center;
+    justify-content: center;
+}
+
+section.especialidades .flex {
+    gap: 60px;
+}
+
+.especialidades .especialidades-box {
+    color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 45px;
+    transition: .2s;
+}
+
+.especialidades .especialidades-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px black;
+}
+
+.especialidades .especialidades-box i {
+    font-size: 70px;
+    color: white;
+}
+
+.especialidades .especialidades-box h3 {
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+/* ESTILO DO SOBRE */
+section.sobre {
+    padding: 80px 4%;
+    justify-content: center;
+    align-items: center;
+}
+
+section.sobre .flex {
+   
+    gap: 60px;
+    flex-direction: column; /* Adicionado para ajustar a direção da flexbox */
+    align-items: center;
+}
+
+.sobre .txt-sobre {
+    font-size: 22px;
+    color: #fff;
+}
+
+.sobre .txt-sobre h2 {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+
+.sobre .txt-sobre h2 span {
+    color: black;
+    display: block;
+}
+
+.img-sobremim {
+    width: 350px;
+    height: 640px;
+    background-size: cover;
+    background-position: 100% 0%;
+    cursor: pointer;
+    border-radius: 40px;
+    position: relative;
+    margin: 0 auto; /* Adicionado para centralizar horizontalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Alterado para 'center' para centralizar verticalmente */
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.titulo-contato {
+    color: #000;
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+
+.sobre .txt-sobre p {
+    margin: 20px 0;
+    text-align: justify;
+}
+
+.apresentacao-links {
+    /* Define a largura do elemento como 500px */
+    width: 100%;
+
+    /* Transforma o elemento em um contêiner flexível com direção de coluna */
+    display: flex;
+    flex-direction: column;
+
+    /* Centraliza horizontalmente os elementos dentro do contêiner */
+    align-items: center;
+
+    /* Define o espaçamento entre os elementos filhos como 20px */
+    gap: 20px;
+    align-content: center;
+}
+
+.apresentacao-links-conteudo{
+    font-family: 'Krona One', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+
+}
+
+/* Estilos para elementos com a classe .botao1 */
+.botao1 {
+    /* Define a cor de fundo como preto */
+    background-color: white;
+
+    /* Define a cor do texto como laranja */
+    color: #ff5500;
+
+    /* Define a largura do elemento como 500px */
+    width: 350px; /* Utiliza toda a largura disponível */
+    margin: 0 auto; /* Centraliza horizontalmente */
+
+    /* Define a altura do elemento como 80px */
+    height: 100px;
+
+    /* Alinha o texto ao centro horizontalmente */
+    text-align: center;
+
+    /* Alinha os itens verticalmente ao centro */
+    align-items: center;
+
+    /* Adiciona uma borda de 2px sólida laranja */
+    border: 2px solid #ff5500;
+
+    /* Define um raio de borda de 50px para criar um botão circular */
+    border-radius: 50px;
+
+    /* Define o tamanho da fonte como 36px */
+    font-size: 36px;
+
+    /* Adiciona preenchimento de 15px vertical e 0 horizontal */
+    padding: 15px 0;
+
+    /* Remove a decoração de texto (sublinhado) */
+    text-decoration: none;
+
+    /* Define a família de fontes como 'Rock Salt' com fallback para cursive */
+    font-family: 'Rock Salt', cursive;
+
+    /* Define um espaçamento entre as letras */
+    letter-spacing: 2px;
+
+    /* Transforma o texto em letras maiúsculas */
+    text-transform: uppercase;
+
+    /* Define a posição como relativa para uso de posicionamento absoluto */
+    position: relative;
+
+    /* Define o overflow como escondido para recortar conteúdo extra */
+    overflow: hidden;
+}
+
+
+/* Pseudo-elemento ::before para elementos com a classe .botao1 */
+.botao1::before {
+    /* Adiciona um conteúdo vazio ao pseudo-elemento */
+    content: "";
+
+    /* Define a posição como absoluta para posicionamento personalizado */
+    position: absolute;
+
+    /* Define a posição superior do pseudo-elemento como 0 */
+    top: 0;
+
+    /* Define a posição esquerda do pseudo-elemento como -100% (fora da tela) */
+    left: -100%;
+
+    /* Define a largura do pseudo-elemento como 100% */
+    width: 100%;
+
+    /* Define a altura do pseudo-elemento como 100% */
+    height: 100%;
+
+    /* Cria um gradiente linear de 45 graus para o fundo do pseudo-elemento */
+    background: linear-gradient(45deg, transparent, #ff5500);
+
+    /* Adiciona uma transição suave de 0.5 segundos */
+    transition: 0.5s;
+}
+
+/* Pseudo-elemento ::before ao passar o mouse sobre elementos com a classe .botao1 */
+.botao1:hover::before {
+    /* Move o pseudo-elemento completamente para a direita */
+    left: 100%;
+}
+
+/* Elemento <i> dentro de elementos com a classe .botao1 */
+.botao1 i {
+    /* Define a posição como absoluta para posicionamento personalizado */
+    position: absolute;
+
+    /* Centraliza horizontalmente na metade do elemento pai */
+    left: 50%;
+
+    /* Centraliza verticalmente na metade do elemento pai */
+    top: 50%;
+
+    /* Move o elemento <i> 50% para a esquerda e 50% para cima */
+    transform: translate(-50%, -50%);
+
+    /* Define o tamanho da fonte como 60px */
+    font-size: 60px;
+
+    color: #ff5500;
+}
+
+
+/* fim da estilização ancora 1(botao1) */
+
+
+
+/* inicio estilização ancora4(botao4) */
+
+.botao4 {
+    background-color:white;
+    align-items: center;
+    color: #25D366; /* Cor padrão do WhatsApp */
+    width: 350px; /* Utiliza toda a largura disponível */
+    margin: 0 auto; /* Centraliza horizontalmente */   
+    height: 100px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid#25D366;
+    border-radius: 50px;
+    font-size: 24px;
+    padding: 15px 0;
+    text-decoration: none;
+    font-family: 'Rock Salt', cursive;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+.botao4::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, #25D366);
+    transition: 0.5s;
+}
+
+.botao4:hover::before {
+    left: 100%;
+}
+
+.botao4 i {
+    position: absolute;
+    font-size: 60px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #25D366; 
+}
+
+/* fim estilização ancora4(botao4) */
+
+/* inicio estilização ancora5(botao5) */
+
+.botao5 {
+    background-color: white;
+    align-items: center;
+    color: #b61ca9; /* Cor padrão do Instagram */
+    width: 350px; /* Utiliza toda a largura disponível */
+    margin: 0 auto; /* Centraliza horizontalmente */   
+    height: 100px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid#b61ca9;
+    border-radius: 50px;
+    font-size: 24px;
+    padding: 15px 0;
+    text-decoration: none;
+    font-family: 'Rock Salt', cursive;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.botao5::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, #2a0887);
+    transition: 0.5s;
+}
+
+.botao5:hover::before {
+    left: 100%;
+}
+
+.botao5 i {
+    position: absolute;
+    color: #b61ca9;
+    font-size: 60px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* fim estilização ancora5(botao5) */
+
+/* Início estilização da âncora para a página do TikTok */
+.botao6 {
+    background-color: white; /* Cor de fundo branco */
+    align-items: center;
+    color: black; /* Cor do texto rosa do TikTok */
+    width: 350px; /* Utiliza toda a largura disponível */
+    margin: 0 auto; /* Centraliza horizontalmente */   
+    height: 100px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #1d1c1d; /* Cor da borda rosa do TikTok */
+    border-radius: 50px;
+    font-size: 24px;
+    padding: 15px 0;
+    text-decoration: none;
+    font-family: 'Rock Salt', cursive;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.botao6::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, #2a0887);
+    transition: 0.5s;
+}
+
+.botao6:hover::before {
+    left: 100%;
+}
+
+.botao6 i {
+    position: absolute;
+    color: black;; /* Cor do ícone rosa do TikTok */
+    font-size: 60px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+/* Fim estilização da âncora para a página do TikTok */
+
+
+
+/* Adicionado regra de mídia para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    .especialidades .flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .especialidades .especialidades-box {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .topo-do-site .flex {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .topo-do-site .txt-topo-site h1 {
+        font-size: 25px;
+        text-align: justify;
+        margin-top: 20px;
+    }
+
+    .topo-do-site .txt-topo-site p {
+        font-size: 20px;
+        text-align: justify;
+    }
+
+  
+
+    /* Adicione estas linhas no final do seu CSS para o menu clicável */
+
+/* Ícone do menu para dispositivos móveis */
+.btn-abrir-menu {
+    display: block; /* Torna visível apenas em dispositivos móveis */
+    cursor: pointer;
+}
+
+.btn-abrir-menu i {
+    color: whitesmoke;
+    font-size: 40px;
+}
+
+/* Lista oculta para dispositivos móveis */
+.menu-mobile ul {
+    text-align: center;
+}
+
+.menu-mobile ul li {
+    display: block;
+    padding: 20px 0;
+}
+
+/* Adicionado regra de mídia para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    header nav.menu-desktop {
+        display: none; /* Oculta o menu desktop em dispositivos móveis */
+    }
+
+    .btn-abrir-menu ~ .overlay-menu {
+        display: none; /* Oculta a sobreposição do menu no início */
+    }
+
+    /* Exibe a lista oculta quando o menu está aberto */
+    .menu-mobile.abrir-menu ul {
+        display: block;
+    }
+
+    /* Adiciona estilo ao ícone do menu quando o menu está aberto */
+    .menu-mobile.abrir-menu .btn-abrir-menu i {
+        transform: rotate(90deg);
+    }
+}
